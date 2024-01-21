@@ -101,7 +101,7 @@
 				{
 					"type": "heading",
 					"attrs": { "level": 2 },
-					"content": [{ "type": "text", "text": "Заголовок 1 уровня" }]
+					"content": [{ "type": "text", "text": "Заголовок 2 уровня" }]
 				}
 			]
 		},
@@ -111,7 +111,7 @@
 				{
 					"type": "heading",
 					"attrs": { "level": 2 },
-					"content": [{ "type": "text", "text": "Заголовок 1 уровня" }]
+					"content": [{ "type": "text", "text": "Заголовок 3 уровня" }]
 				}
 			]
 		},
@@ -121,7 +121,7 @@
 				{
 					"type": "heading",
 					"attrs": { "level": 4 },
-					"content": [{ "type": "text", "text": "Заголовок 1 уровня" }]
+					"content": [{ "type": "text", "text": "Заголовок 4 уровня" }]
 				}
 			]
 		},
