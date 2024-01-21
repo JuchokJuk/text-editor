@@ -29,53 +29,23 @@
 			.focus(pos + 3) // Focus on the new block (you might need to adjust the position based on your exact requirements)
 			.run();
 	}
-
-	let showBlockMenu = false;
-	let hoverMenu = false;
-	let hoverBlock = false;
-
-	$: {
-		showBlockMenu = hoverMenu || hoverBlock;
-	}
 </script>
 
-<NodeViewWrapper
-	{...$$restProps}
-	as="div"
-	draggable
-	class="relative"
-	on:pointerover={() => {
-		hoverBlock = true;
-	}}
-	on:pointerleave={() => {
-		hoverBlock = false;
-	}}
->
-	{#if showBlockMenu}
-		<div
-			class="absolute -left-24 flex w-24 gap-1"
-			transition:fade={{ duration: 150 }}
-			on:pointerover={() => {
-				hoverMenu = true;
-			}}
-			on:pointerleave={() => {
-				hoverMenu = false;
-			}}
-		>
-			<Tooltip.Root portal={null}>
-				<Tooltip.Trigger asChild let:builder>
-					<Button builders={[builder]} size="icon" variant="ghost" on:click={createNodeAfter}>
-						<Plus class="h-4 w-4" />
-					</Button>
-				</Tooltip.Trigger>
-				<Tooltip.Content>
-					Добавить блок снизу
-				</Tooltip.Content>
-			</Tooltip.Root>
-			<Button size="icon" variant="ghost" data-drag-handle class="cursor-grab">
-				<GripVertical class="h-4 w-4" />
-			</Button>
-		</div>
-	{/if}
+<NodeViewWrapper {...$$restProps} as="div" draggable class="group relative">
+	<div
+		class="absolute -left-24 flex h-full w-24 gap-1 opacity-0 transition-opacity group-hover:opacity-100 hover:opacity-100"
+	>
+		<Tooltip.Root portal={null}>
+			<Tooltip.Trigger asChild let:builder>
+				<Button builders={[builder]} size="icon" variant="ghost" on:click={createNodeAfter}>
+					<Plus class="h-4 w-4" />
+				</Button>
+			</Tooltip.Trigger>
+			<Tooltip.Content>Добавить блок снизу</Tooltip.Content>
+		</Tooltip.Root>
+		<Button size="icon" variant="ghost" data-drag-handle class="cursor-grab">
+			<GripVertical class="h-4 w-4" />
+		</Button>
+	</div>
 	<NodeViewContent />
 </NodeViewWrapper>
