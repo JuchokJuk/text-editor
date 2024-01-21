@@ -69,7 +69,7 @@
 					</Button>
 				</Tooltip.Trigger>
 				<Tooltip.Content>
-					<p>Добавить блок снизу</p>
+					Добавить блок снизу
 				</Tooltip.Content>
 			</Tooltip.Root>
 			<Button size="icon" variant="ghost" data-drag-handle class="cursor-grab">

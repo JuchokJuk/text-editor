@@ -21,6 +21,6 @@
 		</Button>
 	</Tooltip.Trigger>
 	<Tooltip.Content>
-		<p>{label}</p>
+		{label}
 	</Tooltip.Content>
 </Tooltip.Root>
